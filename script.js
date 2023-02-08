@@ -1,6 +1,6 @@
 document.querySelector(".search-button").addEventListener("click", () => {
   let searchInput = document.querySelector(".search-input").value;
-  let result = fetch(`http://www.omdbapi.com/?apikey=e10d17d9&s=${searchInput}`);
+  let result = fetch(`https://www.omdbapi.com/?apikey=e10d17d9&s=${searchInput}`);
   result
     .then((e) => e.json())
     .then((m) => {
@@ -22,7 +22,7 @@ document.querySelector(".search-button").addEventListener("click", () => {
       let button = document.querySelectorAll(".details-button");
       for (i = 0; i < button.length; i++) {
         button[i].addEventListener("click", (e) => {
-          fetch(`http://www.omdbapi.com/?apikey=e10d17d9&i=${e.target.dataset.id}`)
+          fetch(`https://www.omdbapi.com/?apikey=e10d17d9&i=${e.target.dataset.id}`)
             .then((e) => e.json())
             .then((d) => {
               let details = `<div class="row">
